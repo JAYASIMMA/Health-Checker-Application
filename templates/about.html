@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+
+{% block title %}About - Health Checker{% endblock %}
+
+{% block extra_css %}
+<style>
+    .feature-card {
+        transition: all 0.3s;
+        height: 100%;
+    }
+    .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    }
+    .feature-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-10 mx-auto">
+        <div class="text-center mb-5">
+            <i class="fas fa-heartbeat fa-4x text-primary mb-3"></i>
+            <h1 class="display-4 text-white">Health Checker AI</h1>
+            <p class="lead text-white">AI-Powered Health Insights at Your Fingertips</p>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body p-5">
+                <h3 class="mb-4"><i class="fas fa-info-circle text-primary"></i> About This Application</h3>
+                <p class="lead">
+                    Health Checker AI is an innovative web application that uses artificial intelligence 
+                    to provide preliminary health insights based on your symptoms. Powered by the advanced 
+                    Jemma-AI model running on Ollama, our platform offers quick, AI-driven health assessments.
+                </p>
+                
+                <div class="alert alert-warning mt-4" role="alert">
+                    <i class="fas fa-exclamation-triangle"></i> 
+                    <strong>Important Disclaimer:</strong> This application is NOT a substitute for professional 
+                    medical advice, diagnosis, or treatment. Always seek the advice of your physician or other 
+                    qualified health provider with any questions you may have regarding a medical condition.
+                </div>
+            </div>
+        </div>
+
+        <h3 class="text-white text-center mb-4"><i class="fas fa-star"></i> Key Features</h3>
+        <div class="row mb-4">
+            <div class="col-md-4 mb-4">
+                <div class="card feature-card">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-robot fa-2x"></i>
+                        </div>
+                        <h5>AI-Powered Analysis</h5>
+                        <p class="text-muted">
+                            Utilizes the Jemma-AI model to analyze symptoms and provide insights
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card feature-card">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-history fa-2x"></i>
+                        </div>
+                        <h5>Health History</h5>
+                        <p class="text-muted">
+                            Track and review your previous health consultations
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card feature-card">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-lock fa-2x"></i>
+                        </div>
+                        <h5>Secure & Private</h5>
+                        <p class="text-muted">
+                            Your health data is encrypted and stored securely
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card feature-card">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-user fa-2x"></i>
+                        </div>
+                        <h5>Personal Profile</h5>
+                        <p class="text-muted">
+                            Manage your account and track your health check statistics
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card feature-card">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-tachometer-alt fa-2x"></i>
+                        </div>
+                        <h5>Fast Response</h5>
+                        <p class="text-muted">
+                            Get AI-generated insights within seconds
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card feature-card">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt fa-2x"></i>
+                        </div>
+                        <h5>Responsive Design</h5>
+                        <p class="text-muted">
+                            Works seamlessly on desktop, tablet, and mobile devices
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body p-5">
+                <h3 class="mb-4"><i class="fas fa-cogs text-primary"></i> Technology Stack</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-success"></i> <strong>Backend:</strong> Flask (Python)</li>
+                            <li class="mb-2"><i class="fas fa-check text-success"></i> <strong>Database:</strong> MySQL (XAMPP)</li>
+                            <li class="mb-2"><i class="fas fa-check text-success"></i> <strong>AI Model:</strong> Jemma-AI via Ollama</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-success"></i> <strong>Frontend:</strong> Bootstrap 5</li>
+                            <li class="mb-2"><i class="fas fa-check text-success"></i> <strong>Icons:</strong> Font Awesome</li>
+                            <li class="mb-2"><i class="fas fa-check text-success"></i> <strong>Security:</strong> SHA-256 Hashing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body p-5 text-center">
+                <h3 class="mb-4"><i class="fas fa-rocket text-primary"></i> Get Started</h3>
+                <p class="lead mb-4">
+                    Ready to get AI-powered health insights? Create an account and start your first health check today!
+                </p>
+                {% if not session.user_id %}
+                <a href="{{ url_for('register') }}" class="btn btn-primary btn-lg me-2">
+                    <i class="fas fa-user-plus"></i> Register Now
+                </a>
+                <a href="{{ url_for('login') }}" class="btn btn-outline-primary btn-lg">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </a>
+                {% else %}
+                <a href="{{ url_for('health_checker') }}" class="btn btn-primary btn-lg">
+                    <i class="fas fa-stethoscope"></i> Start Health Check
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
