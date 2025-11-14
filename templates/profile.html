@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}Profile - Health Checker{% endblock %}
+
+{% block extra_css %}
+<style>
+    .profile-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-radius: 15px;
+    }
+    .stat-card {
+        transition: all 0.3s;
+    }
+    .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <div class="card profile-card mb-4">
+            <div class="card-body text-center p-5">
+                <div class="mb-3">
+                    <i class="fas fa-user-circle fa-5x"></i>
+                </div>
+                <h2 class="mb-2">{{ user.username }}</h2>
+                <p class="mb-1"><i class="fas fa-envelope"></i> {{ user.email }}</p>
+                <p class="mb-0"><i class="fas fa-calendar-alt"></i> Member since {{ user.created_at.strftime('%B %Y') }}</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card stat-card">
+                    <div class="card-body text-center p-4">
+                        <i class="fas fa-clipboard-list fa-3x text-primary mb-3"></i>
+                        <h3 class="mb-2">{{ stats.total }}</h3>
+                        <p class="text-muted mb-0">Total Health Checks</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card stat-card">
+                    <div class="card-body text-center p-4">
+                        <i class="fas fa-heartbeat fa-3x text-danger mb-3"></i>
+                        <h3 class="mb-2">Active</h3>
+                        <p class="text-muted mb-0">Account Status</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body p-4">
+                <h5 class="mb-4"><i class="fas fa-cog"></i> Quick Actions</h5>
+                <div class="d-grid gap-2">
+                    <a href="{{ url_for('health_checker') }}" class="btn btn-primary btn-lg">
+                        <i class="fas fa-stethoscope"></i> New Health Check
+                    </a>
+                    <a href="{{ url_for('history') }}" class="btn btn-outline-primary btn-lg">
+                        <i class="fas fa-history"></i> View History
+                    </a>
+                    <a href="{{ url_for('about') }}" class="btn btn-outline-secondary btn-lg">
+                        <i class="fas fa-info-circle"></i> About the App
+                    </a>
+                    <a href="{{ url_for('logout') }}" class="btn btn-outline-danger btn-lg">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5><i class="fas fa-shield-alt"></i> Privacy & Security</h5>
+                <p class="mb-0 text-muted">
+                    Your health data is stored securely and is only accessible by you. 
+                    We use industry-standard encryption to protect your information.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
